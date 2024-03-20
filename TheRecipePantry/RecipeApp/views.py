@@ -17,3 +17,14 @@ def questionnaire(request):
 
 def recipes(request):
     return render(request, 'recipes.html')
+
+def testpage(request):
+    return render(request,'testpage.html',{})
+
+def search_venues(request):
+    if request.method=="POST":
+        searched=request.POST['searched']
+
+        return render(request, 'search_venues.html',{'searched':searched})
+    else:
+        return render(request, 'search_venues.html',{})
