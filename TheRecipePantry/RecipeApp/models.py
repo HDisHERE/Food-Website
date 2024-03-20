@@ -6,5 +6,5 @@ class Recipe(models.Model):
     link = models.CharField(max_length=200)
     cuisine = models.CharField(max_length=100)
     diet = models.CharField(max_length=100, null=True)
-    prep_time = models.TimeField(auto_now=False, auto_now_add=False)
+    prep_time = models.CharField(max_length=5)
     keywords = models.CharField(max_length=300)
