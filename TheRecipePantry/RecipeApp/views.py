@@ -14,3 +14,6 @@ def signup(request):
 
 def questionnaire(request):
     return render(request, 'questionnaire.html')
+
+def recipes(request):
+    return render(request, 'recipes.html')
