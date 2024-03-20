@@ -8,3 +8,7 @@ class Recipe(models.Model):
     diet = models.CharField(max_length=100, null=True)
     prep_time = models.CharField(max_length=5)
     keywords = models.CharField(max_length=300)
+
+    def __str__(self):
+        return self.name
+
