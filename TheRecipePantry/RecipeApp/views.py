@@ -32,9 +32,12 @@ def single_recipe(request,recipe_id):
     return render(request, 'single_recipe.html', {'recipe': recipe})
 
 def search_recipe(request):
-
+    if request.method == "POST":
         searched = request.POST['tosearch']  # Receive the value of variable named 'keywords'
+        results=Recipe.objects.filter(name__contains=searched)
 
 
-        return render(request, 'search_recipe.html', {'tosearch': searched})  # Return the input variables to the server, and name it as searched.
+        return render(request, 'search_recipe.html', {'tosearch': searched, 'results':results})  # Return the input variables to the server, and name it as searched.
 
+    else:
+        return render(request, 'search_recipe.html', {})
