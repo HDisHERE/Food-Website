@@ -22,11 +22,19 @@ def recipes(request):
 def testpage(request):
     return render(request,'testpage.html', {})
 
+
+def all_recipes(request):
+    recipe_list= Recipe.objects.all()
+    return render(request, 'recipe_list.html',{'recipe_list':recipe_list})
+
+def single_recipe(request,recipe_id):
+    recipe=Recipe.objects.get(pk=recipe_id)
+    return render(request, 'single_recipe.html', {'recipe': recipe})
 def search_venues(request):
     if request.method == "POST":
-        searched = request.POST['keywords']  # Receive the value of variable named 'keywords'
-        recipes = Recipe.objects
+        searched = request.POST['tosearch']  # Receive the value of variable named 'keywords'
+       # recipes = Recipe.objects
 
-        return render(request, 'search_venues.html', {'keywords': searched})  # Return the input variables to the server, and name it as searched.
+        return render(request, 'search_venues.html', {'tosearch': searched})  # Return the input variables to the server, and name it as searched.
     else:
         return render(request, 'search_venues.html', {})
