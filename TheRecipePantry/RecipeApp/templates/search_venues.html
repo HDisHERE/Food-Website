@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+    {% if keywords %} <!--if variable keyword is not null -->
+    <!--It looks kind of confusing, but actually it's just two different names in python code and html, refereing to the same variable -->
+        <h1>You searched for {{keywords}}</h1>
+    {% else %}
+    <h1>Nothing searched yet.</h1>
+    {% endif %}
+</center>
+
+{% endblock %}
