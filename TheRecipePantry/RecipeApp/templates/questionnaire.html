@@ -74,38 +74,6 @@
             color: black;
             margin: 5px;
         }
-        .Ingredientselection{
-            padding: 30px;
-            box-sizing: border-box;
-            font-family: Lato, sans-serif;
-            max-width: 320px;
-            width: 100%;
-            border-radius: 10px;
-            background: white;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            margin-left: 20px;
-            }
-        .selectIng{
-            padding: 20px;
-        }
-        .Ingbutton{
-            display: inline-flex;
-            padding: 10px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            outline: none;
-            border: 1px;
-            border-radius: 10%;
-            background-color: whitesmoke;
-            color: indianred;
-            transition: 0.3s;
-        }
-        .Ingbutton.selected{
-            background-color: indianred;
-            color: black;
-            margin: 5px;
-        }
         .dietselection{
             padding: 30px;
             box-sizing: border-box;
@@ -144,31 +112,7 @@
         <button class="button" id="Indian">Indian</button>
     </div>
 </div>
-<div class="Ingredientselection">
-    <span>Selected Ingredient</span>
-    <div class="selectIng">
-        <button class="Ingbutton" id="Fish">Fish</button>
-        <button class="Ingbutton" id="Bread">Bread</button>
-        <button class="Ingbutton" id="Beef">Beef</button>
-        <button class="Ingbutton" id="Egg">Egg</button>
-        <button class="Ingbutton" id="Tortilla">Tortilla</button>
-        <button class="Ingbutton" id="Chicken">Chicken</button>
-        <button class="Ingbutton" id="Cheese">Cheese</button>
-        <button class="Ingbutton" id="Sausage">Sausage</button>
-        <button class="Ingbutton" id="Rice">Rice</button>
-        <button class="Ingbutton" id="Pork">Pork</button>
-        <button class="Ingbutton" id="Pasta">Pasta</button>
-        <button class="Ingbutton" id="Broth">Broth</button>
-        <button class="Ingbutton" id="Noodles">Noodles</button>
-        <button class="Ingbutton" id="Tofu">Tofu</button>
-        <button class="Ingbutton" id="Shrimp">Shrimp</button>
-        <button class="Ingbutton" id="Flour">Flour</button>
-        <button class="Ingbutton" id="Breadcrumbs">Breadcrumbs</button>
-        <button class="Ingbutton" id="Cornmeal">Cornmeal</button>
-        <button class="Ingbutton" id="PizzaDough">Pizza Dough</button>
-        <button class="Ingbutton" id="TomatoSauce">Tomato Sauce</button>
-    </div>
-</div>
+
 <div class="dietselection">
     <span>Select Diet</span>
     <div class="selectitem">
@@ -176,19 +120,11 @@
         <button class="button" id="vegan">Vegan</button>
         <button class="button" id="glutenfree">Gluten-free</button>
     </div>
+</div>
 <script>
     const cuisines = document.querySelectorAll('.button');
 
     cuisines.forEach(button => {
-        button.addEventListener('click', () =>{
-            button.classList.toggle('selected');
-        });
-    });
-</script>
-<script>
-    const Ingredient = document.querySelectorAll('.Ingbutton');
-
-    Ingredient.forEach(button => {
         button.addEventListener('click', () =>{
             button.classList.toggle('selected');
         });
