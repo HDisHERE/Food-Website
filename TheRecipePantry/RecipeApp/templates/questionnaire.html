@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% extends 'base.html' %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -132,6 +133,8 @@
   </nav>
 
 </header>
+
+{% block content %}
 <body>
 <div class="cuisineselection">
     <span>Select Cuisine</span>
@@ -194,4 +197,6 @@
         });
     });
 </script>
+
 </body>
+   {% endblock %}
