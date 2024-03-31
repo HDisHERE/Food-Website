@@ -1,26 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="cuisineselection">
-    <span>Select Cuisine</span>
-    <div class="selectitem">
+
+<div class="buttonContent">
+    <div class="cuisineselection">
+        <span>Select Cuisine</span>
+      <div class="selectitem">
         <button class="button" id="Chinese">Chinese</button>
         <button class="button" id="Mexican">Mexican</button>
         <button class="button" id="Italian">Italian</button>
         <button class="button" id="Japanese">Japanese</button>
         <button class="button" id="Thai">Thai</button>
         <button class="button" id="Indian">Indian</button>
+      </div>
     </div>
-</div>
 
-<div class="dietselection">
-    <span>Select Diet</span>
-    <div class="selectitem">
+    <div class="dietselection">
+        <span>Select Diet</span>
+      <div class="selectitem">
         <button class="button" id="vegetarian">Vegetarian</button>
         <button class="button" id="vegan">Vegan</button>
         <button class="button" id="glutenfree">Gluten-free</button>
+      </div>
     </div>
+
 </div>
+
 <script>
     const cuisines = document.querySelectorAll('.button');
 

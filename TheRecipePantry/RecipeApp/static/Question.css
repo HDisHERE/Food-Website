@@ -1,37 +1,12 @@
-  .navbar {
-            font-family: 'Lato', sans-serif;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            background-color: indianred;
-        }
 
-        .navbar a {
-            color: black;
-            text-decoration: none;
-        }
+.buttonContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
 
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Lato', sans-serif;
-        }
-        body{
-            background: #e0e0e0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .cuisineselection{
+.dietselection{
             padding: 30px;
             box-sizing: border-box;
             font-family: Lato, sans-serif;
@@ -40,12 +15,15 @@
             border-radius: 10px;
             background: white;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            }
-        .selectitem{
-            padding: 20px;
+            margin-left: 20px;
+}
+.button.selected{
+            background-color: indianred;
+            color: black;
             margin: 5px;
-        }
-        .button{
+}
+
+.button{
             display: inline-flex;
             padding: 10px;
             cursor: pointer;
@@ -57,13 +35,13 @@
             background-color: whitesmoke;
             color: indianred;
             transition: 0.3s;
-        }
-        .button.selected{
-            background-color: indianred;
-            color: black;
+}
+.selectitem{
+            padding: 20px;
             margin: 5px;
-        }
-        .dietselection{
+}
+
+.cuisineselection{
             padding: 30px;
             box-sizing: border-box;
             font-family: Lato, sans-serif;
@@ -72,5 +50,18 @@
             border-radius: 10px;
             background: white;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            margin-left: 20px;
-            }
+}
+
+body{
+            background: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+}
+*{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+}
