@@ -11,15 +11,7 @@
     <title>The Recipe Pantry</title>
 </head>
 <header>
-
-  <nav class="navbar">
-    <a href="{% url 'ourgoal' %}">Our Goal</a>
-    <a class = "active" href="{% url 'home' %}">Home</a>
-    <a href="{% url 'login' %}">Login</a>
-    <a href="{% url 'signup' %}">Sign Up</a>
-    <a href="{% url 'testpage' %}">Test page</a>
-      <a href="{% url 'recipe-list' %}">Recipe List</a>
-  </nav>
+    {% extends 'base.html' %}
 </header>
 <body>
 <div class="logo">
