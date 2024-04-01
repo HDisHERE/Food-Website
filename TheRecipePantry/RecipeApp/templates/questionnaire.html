@@ -2,6 +2,14 @@
 
 {% block content %}
 
+
+<form class="d-flex" role="search" method=POST action="{% url 'Ingredient_Search'%}">
+        {% csrf_token %}
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="tosearch"><!--Here is the universal name of user input variable value-->
+        <button class="btn btn-outline-secondary" type="submit">Enter</button>
+      </form>
+
+
 <div class="buttonContent">
     <div class="cuisineselection">
         <span>Select Cuisine</span>

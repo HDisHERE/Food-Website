@@ -7,21 +7,21 @@
         <h1>You searched for {{tosearch}}</h1><br/>
         {%if results %}
         <br/>
-    {% for recipe in results %}
+    {% for keywords in results %}
         <div class="card">
   <div class="card-header">
-      <h5 class="card-title">Name: {{recipe.name}}</h5>
+      <h5 class="card-title">Name: {{keywords.name}}</h5>
 
       <br/>
   </div>
   <div class="card-body">
     <p class="card-text">
         <u1>
-       <strong>Website Link:</strong> {{recipe.link}}<br/>
-       <strong>Cuisine:</strong> {{recipe.cuisine}}<br/>
-       <strong>Diet:</strong> {{recipe.diet}}<br/>
-       <strong>Time:</strong> {{recipe.prep_time}}<br/>
-       <strong>Ingredients:</strong> {{recipe.keywords}}<br/>
+       <strong>Website Link:</strong> {{keywords.link}}<br/>
+       <strong>Ingredients:</strong> {{keywords.keywords}}<br/>
+       <strong>Cuisine:</strong> {{keywords.cuisine}}<br/>
+       <strong>Diet:</strong> {{keywords.diet}}<br/>
+       <strong>Time:</strong> {{keywords.prep_time}}<br/>
     </u1>
     </p>
   </div>
