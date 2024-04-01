@@ -10,7 +10,7 @@
     {% for keywords in results %}
         <div class="card">
   <div class="card-header">
-      <a href="{%url 'Keywords_search' keywords.id%}">{{keywords}}</a>
+      <h5 class="card-title">Name: {{keywords.name}}</h5>
 
       <br/>
   </div>

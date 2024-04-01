@@ -10,7 +10,7 @@
     {% for recipe in results %}
         <div class="card">
   <div class="card-header">
-      <a href="{%url 'single-recipe' recipe.id%}">{{recipe}}</a>
+      <h5 class="card-title">Name: {{recipe.name}}</h5>
 
       <br/>
   </div>
