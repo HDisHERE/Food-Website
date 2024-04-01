@@ -1,13 +1,9 @@
 {% extends 'base.html' %}
 
+{% block content %}
 <center>
-    {% if tosearch %} <!--if variable keyword is not null -->
-    <!--It looks kind of confusing, but actually it's just two different names in python code and html, refereing to the same variable -->
-        <h1>You searched for {{tosearch}}</h1><br/>
-        {%if results %}
-        <br/>
-    {% for keywords in results %}
-        <div class="card">
+    <h1>Recipe: </h1>
+    <div class="card">
   <div class="card-header">
       <a href="{%url 'Keywords_search' keywords.id%}">{{keywords}}</a>
 
@@ -26,15 +22,7 @@
     </p>
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
-</div><br/>
-    {% endfor %}
-        {% else %}
-        <h1>Nothing found.</h1><br/>
-        {% endif %}
-
-    {% else %}
-    <h1>Nothing searched yet.</h1>
-    {% endif %}
+</div>
 </center>
 
 {% endblock %}
