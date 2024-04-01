@@ -1,0 +1,38 @@
+<center>
+    {% if tosearch %} <!--if variable keyword is not null -->
+    <!--It looks kind of confusing, but actually it's just two different names in python code and html, refereing to the same variable -->
+        <h1>You searched for {{tosearch}}</h1><br/>
+        {%if results %}
+        <br/>
+    {% for keywords in results %}
+        <div class="card">
+  <div class="card-header">
+      <a href="{%url 'single-keywords' keywords.id%}">{{keywords}}</a>
+
+      <br/>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Name: {{keywords.name}}</h5>
+    <p class="card-text">
+        <u1>
+       <strong>Website Link:</strong> {{recipe.link}}<br/>
+       <strong>Keywords:</strong> {{recipe.keywords}}<br/>
+       <strong>Cuisine:</strong> {{recipe.cuisine}}<br/>
+       <strong>Diet:</strong> {{recipe.diet}}<br/>
+       <strong>Time:</strong> {{recipe.prep_time}}<br/>
+    </u1>
+    </p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div><br/>
+    {% endfor %}
+        {% else %}
+        <h1>Nothing found.</h1><br/>
+        {% endif %}
+
+    {% else %}
+    <h1>Nothing searched yet.</h1>
+    {% endif %}
+</center>
+
+{% endblock %}
