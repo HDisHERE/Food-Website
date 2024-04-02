@@ -1,0 +1,57 @@
+
+.buttonContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.dietselection{
+            padding: 30px;
+            box-sizing: border-box;
+            font-family: Lato, sans-serif;
+            max-width: 320px;
+            width: 100%;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            margin-left: 20px;
+}
+.button.selected{
+            background-color: indianred;
+            color: black;
+            margin: 5px;
+}
+
+.button{
+            display: inline-flex;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            border: 1px;
+            border-radius: 10%;
+            background-color: whitesmoke;
+            color: indianred;
+            transition: 0.3s;
+}
+.selectitem{
+            padding: 20px;
+            margin: 5px;
+}
+
+.cuisineselection{
+            padding: 30px;
+            box-sizing: border-box;
+            font-family: Lato, sans-serif;
+            max-width: 320px;
+            width: 100%;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+body{
+            background: #e0e0e0;
+}
