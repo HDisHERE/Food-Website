@@ -27,8 +27,33 @@
   </div>
 </div><br/>
     {% endfor %}
+
         {% else %}
+    {%if results_name %}
+    <br/>
+    {% for recipe in results_name %}
+        <div class="card">
+  <div class="card-header">
+      <h5 class="card-title">Name: {{recipe.name}}</h5>
+
+      <br/>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+        <u1>
+       <strong>Website Link:</strong> {{recipe.link}}<br/>
+       <strong>Cuisine:</strong> {{recipe.cuisine}}<br/>
+       <strong>Diet:</strong> {{recipe.diet}}<br/>
+       <strong>Time:</strong> {{recipe.prep_time}}<br/>
+       <strong>Ingredients:</strong> {{recipe.keywords}}<br/>
+    </u1>
+    </p>
+  </div>
+</div><br/>
+    {% endfor %}
+    {% else %}
         <h1>Nothing found.</h1><br/>
+    {% endif %}
         {% endif %}
 
     {% else %}
