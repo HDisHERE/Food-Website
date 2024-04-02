@@ -1,29 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<center>
     {% if tosearch %} <!--if variable keyword is not null -->
     <!--It looks kind of confusing, but actually it's just two different names in python code and html, refereing to the same variable -->
-        <h1>You searched for {{tosearch}}</h1><br/>
+        <center><h1>You searched for {{tosearch}}</h1><br/></center>
         {%if results %}
         <br/>
     {% for recipe in results %}
-        <div class="card">
+      <div class="card">
   <div class="card-header">
-      <h5 class="card-title">Name: {{recipe.name}}</h5>
+      <a href="{%url 'single-recipe' recipe.id%}"><strong>{{recipe}}</strong> </a>
 
       <br/>
   </div>
+
   <div class="card-body">
+    <h5 class="card-title">{{recipe.name}}</h5>
     <p class="card-text">
         <u1>
-       <strong>Website Link:</strong> {{recipe.link}}<br/>
        <strong>Cuisine:</strong> {{recipe.cuisine}}<br/>
        <strong>Diet:</strong> {{recipe.diet}}<br/>
        <strong>Time:</strong> {{recipe.prep_time}}<br/>
-       <strong>Ingredients:</strong> {{recipe.keywords}}<br/>
+       <strong>Keywords:</strong> {{recipe.keywords}}<br/>
     </u1>
     </p>
+    <a href="{{recipe.link}}" class="btn btn-primary">Learn more about it!</a>
   </div>
 </div><br/>
     {% endfor %}
@@ -32,33 +33,34 @@
     {%if results_name %}
     <br/>
     {% for recipe in results_name %}
-        <div class="card">
+       <div class="card">
   <div class="card-header">
-      <h5 class="card-title">Name: {{recipe.name}}</h5>
+      <a href="{%url 'single-recipe' recipe.id%}"><strong>{{recipe}}</strong> </a>
 
       <br/>
   </div>
+
   <div class="card-body">
+    <h5 class="card-title">{{recipe.name}}</h5>
     <p class="card-text">
         <u1>
-       <strong>Website Link:</strong> {{recipe.link}}<br/>
        <strong>Cuisine:</strong> {{recipe.cuisine}}<br/>
        <strong>Diet:</strong> {{recipe.diet}}<br/>
        <strong>Time:</strong> {{recipe.prep_time}}<br/>
-       <strong>Ingredients:</strong> {{recipe.keywords}}<br/>
+       <strong>Keywords:</strong> {{recipe.keywords}}<br/>
     </u1>
     </p>
+    <a href="{{recipe.link}}" class="btn btn-primary">Learn more about it!</a>
   </div>
 </div><br/>
     {% endfor %}
     {% else %}
-        <h1>Nothing found.</h1><br/>
+        <center><h1>Nothing found.</h1><br/></center>
     {% endif %}
         {% endif %}
 
     {% else %}
     <h1>Nothing searched yet.</h1>
     {% endif %}
-</center>
 
 {% endblock %}
