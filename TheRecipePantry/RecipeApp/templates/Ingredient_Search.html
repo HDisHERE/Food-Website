@@ -1,39 +1,39 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<center>
     {% if tosearch %} <!--if variable keyword is not null -->
     <!--It looks kind of confusing, but actually it's just two different names in python code and html, refereing to the same variable -->
-        <h1>You searched for {{tosearch}}</h1><br/>
+        <center><h1>You searched for {{tosearch}}</h1><br/></center>
         {%if results %}
         <br/>
     {% for keywords in results %}
         <div class="card">
   <div class="card-header">
-      <h5 class="card-title">Name: {{keywords.name}}</h5>
+      <a href="{%url 'single-recipe' keywords.id%}"><strong>{{keywords}}</strong> </a>
 
       <br/>
   </div>
+
   <div class="card-body">
+    <h5 class="card-title">{{keywords.name}}</h5>
     <p class="card-text">
         <u1>
-       <strong>Website Link:</strong> {{keywords.link}}<br/>
-       <strong>Ingredients:</strong> {{keywords.keywords}}<br/>
        <strong>Cuisine:</strong> {{keywords.cuisine}}<br/>
        <strong>Diet:</strong> {{keywords.diet}}<br/>
        <strong>Time:</strong> {{keywords.prep_time}}<br/>
+       <strong>Keywords:</strong> {{keywords.keywords}}<br/>
     </u1>
     </p>
+    <a href="{{recipe.link}}" class="btn btn-primary">Learn more about it!</a>
   </div>
 </div><br/>
     {% endfor %}
         {% else %}
-        <h1>Nothing found.</h1><br/>
+        <center><h1>Nothing found.</h1><br/></center>
         {% endif %}
 
     {% else %}
-    <h1>Nothing searched yet.</h1>
+    <center><h1>Nothing searched yet.</h1><br/></center>
     {% endif %}
-</center>
 
 {% endblock %}
