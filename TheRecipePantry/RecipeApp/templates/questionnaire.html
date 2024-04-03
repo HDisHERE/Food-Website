@@ -2,15 +2,24 @@
 
 {% block content %}
 
-
+<div class="userquest"><h1>Please select your options below!</h1>
+</div>
 <form class="d-flex" role="search" method=POST action="{% url 'Ingredient_Search'%}">
         {% csrf_token %}
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="tosearch"><!--Here is the universal name of user input variable value-->
         <button class="btn btn-outline-secondary" type="submit">Enter</button>
       </form>
 
-
 <div class="buttonContent">
+
+    <div class="ingredientselection">
+        <span>Select Ingredient</span>
+      <div class="selectitem">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="tosearch">
+        <button class="btn btn-outline-secondary custombutton" type="submit">Enter</button>
+      </div>
+    </div>
+
     <div class="cuisineselection">
         <span>Select Cuisine</span>
       <div class="selectitem">
@@ -30,6 +39,15 @@
         <button class="button" id="vegetarian">Vegetarian</button>
         <button class="button" id="vegan">Vegan</button>
         <button class="button" id="glutenfree">Gluten-free</button>
+      </div>
+    </div>
+
+    <div class="timeselection">
+        <span>Select Time</span>
+      <div class="selectitem">
+        <button class="button" id="less30">Under 00:30</button>
+        <button class="button" id="middle">00:30 - 1:30</button>
+        <button class="button" id="over">Over 1:30</button>
       </div>
     </div>
 

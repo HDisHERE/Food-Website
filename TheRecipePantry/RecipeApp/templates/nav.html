@@ -1,7 +1,25 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <!--bg-body-tertiary-->
+<style>
+  .navbar-brand{
+    font-family: 'Royal Acidbath', sans-serif;
+  }
+  .bg-custom
+  {
+    background-color: indianred;
+  }
+  .custombutton{
+    border-color: black;
+    background-color: indianred;
+    color: black;
+  }
+  .navbarfont{
+    font-family: 'Lato', sans-serif;
+
+  }
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark bg-custom">
   <div class="container-fluid">
     <a class="navbar-brand" href="{% url 'home' %}">The Recipe Pantry</a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,6 +28,7 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{% url 'recipe-list' %}">Recipe List</a>
         </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Got To
@@ -19,15 +38,28 @@
             <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
             <li><a class="dropdown-item" href="{% url 'signup' %}">Sign Up</a></li>
           </ul>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'ourgoal' %}">Our Goal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'recipe-list' %}">Recipe List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+
         </li>
       </ul>
-      <form class="d-flex" role="search" method=POST action="{% url 'search-recipe'%}">
+      <form class="d-flex" role="search" method="POST" action="{% url 'search-recipe'%}">
         {% csrf_token %}
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="tosearch"><!--Here is the universal name of user input variable value-->
-        <button class="btn btn-outline-secondary" type="submit">Enter</button>
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="tosearch">
+        <button class="btn btn-outline-secondary custombutton" type="submit">Enter</button>
       </form>
     </div>
-    <form>
+
  <!--<div class="form-row align-items-center">
     <div class="col-auto my-1">
       <label class="mr-sm-2" for="inlineFormCustomSelect">Preference</label>
@@ -48,5 +80,4 @@
     </div>
     </form>-->
 
-  </div>
 </nav>
