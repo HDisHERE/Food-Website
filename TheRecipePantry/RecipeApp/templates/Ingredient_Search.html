@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% if tosearch %} <!--if variable keyword is not null -->
+    {% if tosearch_center %} <!--if variable keyword is not null -->
     <!--It looks kind of confusing, but actually it's just two different names in python code and html, refereing to the same variable -->
-        <center><h1>You searched for {{tosearch}}</h1><br/></center>
+        <center><h1>You searched for {{tosearch_center}}</h1><br/></center>
         {%if results %}
         <br/>
     {% for keywords in results %}

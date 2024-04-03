@@ -63,11 +63,11 @@ def Keywords_search(request,keywords_id):
 
 def Ingredient_Search(request):
     if request.method == "POST":
-        searched = request.POST['tosearch']  # Receive the value of variable named 'keywords'
+        searched = request.POST['tosearch_center']  # Receive the value of variable named 'keywords'
         results=Recipe.objects.filter(keywords__contains=searched)
 
 
-        return render(request, 'Ingredient_Search.html', {'tosearch': searched, 'results':results})  # Return the input variables to the server, and name it as searched.
+        return render(request, 'Ingredient_Search.html', {'tosearch_center': searched, 'results':results})  # Return the input variables to the server, and name it as searched.
 
     else:
         return render(request, 'Ingredient_Search.html', {})
