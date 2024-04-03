@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.db.models import Q
 from .models import Recipe, Keywords
+from .filters import RecipeFilter
 
 
 def home(request):
@@ -38,16 +39,14 @@ def search_recipe(request):
         all_recipe=Recipe.objects.all()
         #results_name=Recipe.objects.filter(Q(name__contains=searched)|Q(keywords__contains=searched))
         results=Recipe.objects.filter(Q(keywords__contains=searched)|Q(name__contains=searched)).distinct()
-
-        results.filter()
-
+        myFilter = RecipeFilter(request.GET,queryset=results)
+        results=myFilter.qs
         context={
                 'tosearch': searched,
-                'results':results,
-                'all_recipe':all_recipe
-
+                'results': results,
+                'all_recipe': all_recipe,
+                'myFilter' : myFilter
         }
-
 
 
 
@@ -63,11 +62,11 @@ def Keywords_search(request,keywords_id):
 
 def Ingredient_Search(request):
     if request.method == "POST":
-        searched = request.POST['tosearch_center']  # Receive the value of variable named 'keywords'
+        searched = request.POST['tosearch']  # Receive the value of variable named 'keywords'
         results=Recipe.objects.filter(keywords__contains=searched)
 
 
-        return render(request, 'Ingredient_Search.html', {'tosearch_center': searched, 'results':results})  # Return the input variables to the server, and name it as searched.
+        return render(request, 'Ingredient_Search.html', {'tosearch': searched, 'results':results})  # Return the input variables to the server, and name it as searched.
 
     else:
         return render(request, 'Ingredient_Search.html', {})

@@ -2,8 +2,12 @@
 
 {% block content %}
 
+<!--<form method="get">
+    {{myFilter.form}}
+</form>-->
+
     {% if tosearch %} <!--if variable keyword is not null -->
-    <!--It looks kind of confusing, but actually it's just two different names in python code and html, refereing to the same variable -->
+    <!--It looks kind of confusing, but actually it's just two different names in python code and html, refereing to the same variable-->
         <center><h1>You searched for {{tosearch}}</h1><br/></center>
         {%if results %}
         <br/>
@@ -63,7 +67,5 @@
     {% else %}
     <center><h1>Nothing searched yet.</h1></center>
     {% endif %}
-
-
 
 {% endblock %}

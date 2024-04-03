@@ -3,18 +3,19 @@
 {% block content %}
 
 
-<!--<form class="d-flex" role="search" method=POST action="{% url 'Ingredient_Search'%}">
+<form class="d-flex" role="search" method=POST action="{% url 'Ingredient_Search'%}">
         {% csrf_token %}
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="tosearch_center"><!--Here is the universal name of user input variable value
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="tosearch"><!--Here is the universal name of user input variable value-->
         <button class="btn btn-outline-secondary" type="submit">Enter</button>
-      </form>-->
+      </form>
 
 
 <div class="buttonContent">
     <div class="cuisineselection">
         <span>Select Cuisine</span>
       <div class="selectitem">
-        <button class="button" id="Chinese">Chinese</button>
+        <button type="button" class="button" id="Chinese" name="Chinese">Chinese</button>
+
         <button class="button" id="Mexican">Mexican</button>
         <button class="button" id="Italian">Italian</button>
         <button class="button" id="Japanese">Japanese</button>
