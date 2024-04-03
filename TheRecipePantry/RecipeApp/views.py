@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.db.models import Q
 from .models import Recipe, Keywords
 
 
@@ -32,11 +33,18 @@ def single_recipe(request,recipe_id):
 def search_recipe(request):
     if request.method == "POST":
         searched = request.POST['tosearch']  # Receive the value of variable named 'keywords'
-        results_name=Recipe.objects.filter(name__contains=searched)
-        results=Recipe.objects.filter(keywords__contains=searched)
+        all_recipe=Recipe.objects.all()
+        #results_name=Recipe.objects.filter(Q(name__contains=searched)|Q(keywords__contains=searched))
+        results=Recipe.objects.filter(Q(name__contains=searched)|Q(keywords__contains=searched)).distinct()
 
 
-        return render(request, 'search_recipe.html', {'tosearch': searched, 'results':results, 'results_name':results_name})  # Return the input variables to the server, and name it as searched.
+
+
+        return render(request, 'search_recipe.html', {'tosearch': searched,
+                                                      'results':results,
+
+                                                      'all_recipe':all_recipe
+                                                      })  # Return the input variables to the server, and name it as searched.
 
     else:
         return render(request, 'search_recipe.html', {})
